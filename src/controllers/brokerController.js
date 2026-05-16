@@ -60,15 +60,20 @@ const handleBrokerRequest = async (req, res) => {
 
   console.log(`[BROKER] ${method.toUpperCase()} ${path} → ${matchedRoute.service} (${targetUrl})`);
 
-  try {
-
-    const response = await axios({
-      method: method.toLowerCase(),
-      url: targetUrl,
-      data: body || {},
-      headers: { "Content-Type": "application/json" },
-      timeout: 10000,
-    });
+  const response = await axios({
+    method: method.toLowerCase(),
+    url: targetUrl,
+    data: body || {},
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "User-Agent": "BrokerService/1.0",
+      ...(req.headers["authorization"] && {
+        "Authorization": req.headers["authorization"]
+      }),
+    },
+    timeout: 10000,
+  });
 
 
     return res.status(response.status).json({
