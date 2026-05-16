@@ -10,6 +10,8 @@ const getServiceUrl = (serviceName) => {
     MOVIMIENTOS:  process.env.MOVIMIENTOS_URL,
     CHATS:        process.env.CHATS_URL,
     SOPORTE:      process.env.SOPORTE_URL,
+    AUTH:         process.env.AUTH_URL,
+    PROMOCIONES: process.env.PROMOCIONES_URL,
   };
 
   return urls[serviceName] || null;

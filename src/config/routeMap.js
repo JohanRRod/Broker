@@ -46,6 +46,21 @@ const routeMap = [
   // ── SOPORTE ──────────────────────────────
   { method: "POST",   path: "/soporte",            service: "SOPORTE" },
   { method: "POST",   path: "/soporte/reembolso",  service: "SOPORTE" },
+
+  // ── AUTH / USUARIOS ───────────────────────
+    { method: "POST",   path: "/auth/customers/register", service: "AUTH" },
+    { method: "POST",   path: "/auth/customers/login",    service: "AUTH" },
+    { method: "GET",    path: "/auth/me",                 service: "AUTH" },
+    { method: "GET",    path: "/usuarios/:tipo/:id",       service: "AUTH" },
+    { method: "POST",   path: "/couriers/register",        service: "AUTH" },
+    { method: "GET",    path: "/couriers/me/account-status", service: "AUTH" },
+
+
+    // ── PROMOCIONES ───────────────────────────
+      { method: "GET",  path: "/promociones",      service: "PROMOCIONES" },
+      { method: "POST", path: "/promociones",      service: "PROMOCIONES" },
+      { method: "PUT",  path: "/promociones/:id",  service: "PROMOCIONES" },
+      { method: "DELETE", path: "/promociones/:id", service: "PROMOCIONES" },
 ];
 
 module.exports = routeMap;

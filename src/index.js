@@ -3,6 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const logger = require("./middleware/logger");
 const brokerRoutes = require("./routes/brokerRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 const PORT = process.env.BROKER_PORT || 4000;
@@ -12,6 +13,7 @@ app.use(morgan("dev"));
 app.use(logger);
 
 app.use("/api", brokerRoutes);
+app.use("/api", authRoutes);
 
 app.get("/health", (req, res) => {
   res.json({
