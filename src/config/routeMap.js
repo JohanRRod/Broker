@@ -64,10 +64,59 @@ const routeMap = [
   { method: "GET",    path: "/cobros/:id",               service: "COBROS" },
   { method: "POST",   path: "/cobros/reembolsos",        service: "COBROS" },
 
-  // ── BANCO ────────────────────────────────
-  { method: "POST",   path: "/banco/cuentas",            service: "BANCO" },
-  { method: "POST",   path: "/banco/tarjetas",           service: "BANCO" },
-  { method: "POST",   path: "/banco/transferencia",      service: "BANCO" },
+  // ── BANKS ────────────────────────────────
+    { method: "GET",    path: "/banks",                           service: "BANCO" },
+    { method: "GET",    path: "/banks/:id",                       service: "BANCO" },
+    { method: "POST",   path: "/banks",                           service: "BANCO" },
+    { method: "PUT",    path: "/banks/:id",                       service: "BANCO" },
+    { method: "DELETE", path: "/banks/:id",                       service: "BANCO" },
+
+    // ── ACCOUNTS ─────────────────────────────
+    { method: "GET",    path: "/accounts",                        service: "BANCO" },
+    { method: "GET",    path: "/accounts/my-accounts",            service: "BANCO" },
+    { method: "GET",    path: "/accounts/:id",                    service: "BANCO" },
+    { method: "POST",   path: "/accounts",                        service: "BANCO" },
+    { method: "PUT",    path: "/accounts/:id",                    service: "BANCO" },
+    { method: "DELETE", path: "/accounts/:id",                    service: "BANCO" },
+
+    // ── CARDS ────────────────────────────────
+    { method: "GET",    path: "/cards",                           service: "BANCO" },
+    { method: "GET",    path: "/cards/:id",                       service: "BANCO" },
+    { method: "GET",    path: "/cards/:id/statement",             service: "BANCO" },
+    { method: "POST",   path: "/cards/validate",                  service: "BANCO" },
+    { method: "PUT",    path: "/cards/:id",                       service: "BANCO" },
+    { method: "DELETE", path: "/cards/:id",                       service: "BANCO" },
+
+    // ── ASSOCIATES ───────────────────────────
+    { method: "GET",    path: "/associates",                      service: "BANCO" },
+    { method: "GET",    path: "/associates/:id",                  service: "BANCO" },
+    { method: "POST",   path: "/associates/login",                service: "BANCO" },
+    { method: "GET",    path: "/associates/card-requests/mine",   service: "BANCO" },
+    { method: "POST",   path: "/associates/card-requests",        service: "BANCO" },
+
+    // ── TRANSACTIONS ─────────────────────────
+    { method: "GET",    path: "/transactions",                    service: "BANCO" },
+    { method: "GET",    path: "/transactions/:id",                service: "BANCO" },
+    { method: "GET",    path: "/transactions/by-account/:accountId", service: "BANCO" },
+    { method: "POST",   path: "/transactions/tokenize",           service: "BANCO" },
+    { method: "POST",   path: "/transactions/charge",             service: "BANCO" },
+    { method: "POST",   path: "/transactions/card-payment",       service: "BANCO" },
+    { method: "POST",   path: "/transactions/deposit",            service: "BANCO" },
+
+    // ── TRANSFERS ────────────────────────────
+    { method: "GET",    path: "/transfers",                       service: "BANCO" },
+    { method: "GET",    path: "/transfers/:id",                   service: "BANCO" },
+    { method: "GET",    path: "/transfers/by-account/:accountId", service: "BANCO" },
+    { method: "POST",   path: "/transfers",                       service: "BANCO" },
+
+    // ── ADMIN BANCO ──────────────────────────
+    { method: "GET",    path: "/admin/card-requests/pending",     service: "BANCO" },
+    { method: "POST",   path: "/admin/login",                     service: "BANCO" },
+    { method: "POST",   path: "/admin/register",                  service: "BANCO" },
+    { method: "POST",   path: "/admin/associates",                service: "BANCO" },
+    { method: "POST",   path: "/admin/card-requests/:id/approve", service: "BANCO" },
+    { method: "POST",   path: "/admin/card-requests/:id/reject",  service: "BANCO" },
+    { method: "PUT",    path: "/admin/associates/:id",            service: "BANCO" },
 
   // ── REPARTIDORES ─────────────────────────
   { method: "GET",    path: "/repartidores/pedidos",     service: "REPARTIDORES" },
