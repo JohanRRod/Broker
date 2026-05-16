@@ -102,6 +102,7 @@ const login = async (req, res) => {
   });
 };
 
+
 const me = (req, res) => {
   return res.json({
     id: req.usuario.id,
