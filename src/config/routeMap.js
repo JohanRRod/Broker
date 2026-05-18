@@ -132,13 +132,40 @@ const routeMap = [
   { method: "POST",   path: "/descuentos/aplicar",       service: "DESCUENTOS" },
 
   // ── ADMIN / CONTABILIDAD ─────────────────
-  { method: "GET",    path: "/movimientos/fondos",         service: "MOVIMIENTOS" },
-  { method: "POST",   path: "/movimientos/ingreso-pedido", service: "MOVIMIENTOS" },
-  { method: "POST",   path: "/movimiento/egreso",          service: "MOVIMIENTOS" },
-  { method: "POST",   path: "/reembolso",                  service: "MOVIMIENTOS" },
-  { method: "POST",   path: "/compensaciones",             service: "MOVIMIENTOS" },
-  { method: "GET",    path: "/reportes/ventas",            service: "MOVIMIENTOS" },
-  { method: "GET",    path: "/dashboard",                  service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/movimientos",                service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/movimientos/periodo",        service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/movimientos/entidad/:id",    service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/movimientos/fondos",         service: "MOVIMIENTOS" },
+    { method: "POST",   path: "/movimientos/ingreso-pedido", service: "MOVIMIENTOS" },
+    { method: "POST",   path: "/movimiento/egreso",          service: "MOVIMIENTOS" },
+
+    { method: "GET",    path: "/cobros",                     service: "MOVIMIENTOS" },
+    { method: "POST",   path: "/cobros",                     service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/cobros/:id",                 service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/cobros/repartidor/:id",      service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/cobros/saldo/:id",           service: "MOVIMIENTOS" },
+    { method: "DELETE", path: "/cobros/:id",                 service: "MOVIMIENTOS" },
+    { method: "POST",   path: "/cobros/denegado",            service: "MOVIMIENTOS" },
+
+    { method: "GET",    path: "/reembolsos",                 service: "MOVIMIENTOS" },
+    { method: "POST",   path: "/reembolsos",                 service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/reembolsos/:id",             service: "MOVIMIENTOS" },
+    { method: "PUT",    path: "/reembolsos/:id/procesar",    service: "MOVIMIENTOS" },
+    { method: "PUT",    path: "/reembolsos/:id/rechazar",    service: "MOVIMIENTOS" },
+
+    { method: "GET",    path: "/compensaciones",             service: "MOVIMIENTOS" },
+    { method: "POST",   path: "/compensaciones",             service: "MOVIMIENTOS" },
+    { method: "PUT",    path: "/compensaciones/:id/procesar",service: "MOVIMIENTOS" },
+
+    { method: "GET",    path: "/reportes",                   service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/reportes/repartidores",      service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/reportes-restaurantes",      service: "MOVIMIENTOS" },
+
+    { method: "GET",    path: "/bancos/cuentas",             service: "MOVIMIENTOS" },
+    { method: "POST",   path: "/bancos/transferencias",      service: "MOVIMIENTOS" },
+
+    { method: "GET",    path: "/reportes/ventas",            service: "MOVIMIENTOS" },
+    { method: "GET",    path: "/dashboard",                  service: "MOVIMIENTOS" },
 
   // ── CHATS ────────────────────────────────
   { method: "GET",    path: "/chats",                    service: "CHATS" },
