@@ -39,7 +39,7 @@ const register = async (req, res) => {
   const token = jwt.sign(
     { id: nuevoUsuario.id, email: nuevoUsuario.email, rol: nuevoUsuario.rol },
     process.env.JWT_SECRET,
-    { expiresIn: process.env.JWT_EXPIRES_IN }
+    { expiresIn: 86400 }
   );
 
   return res.status(201).json({
@@ -83,7 +83,7 @@ const login = async (req, res) => {
   const token = jwt.sign(
     { id: usuario.id, email: usuario.email, rol: usuario.rol },
     process.env.JWT_SECRET,
-    { expiresIn: process.env.JWT_EXPIRES_IN }
+    { expiresIn: 86400 }
   );
 
   return res.json({
